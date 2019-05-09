@@ -15,7 +15,7 @@ import bookmall.vo.MemberVo;
 import bookmall.vo.OrderBookVo;
 import bookmall.vo.OrderVo;
 
-public class mainApp {
+public class MainApp {
 
 	public static void main(String[] args) {
 		getListMember();

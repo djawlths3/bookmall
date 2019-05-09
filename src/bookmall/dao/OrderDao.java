@@ -25,18 +25,20 @@ public class OrderDao {
 			conn = dbConnect.getConnection();
 			
 			String sql = "insert into orders values(null,?,?,?,?,?)";
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
 			
 			pstmt.setString(1, vo.getName());
 			pstmt.setString(2, vo.getEmail());
 			pstmt.setInt(3, vo.getPrice());
 			pstmt.setString(4, vo.getAddress());
 			pstmt.setInt(5, vo.getCusomorNo());
-			pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-			ResultSet rs = pstmt.getGeneratedKeys();
-	         if(rs.next()) ordersNo = rs.getInt(1);
 			int count = pstmt.executeUpdate();
-			result = (count == 1);
+
+			ResultSet rs = pstmt.getGeneratedKeys();
+			if(rs.next()) {
+				ordersNo = rs.getInt(1);
+			}
+			// result = (count == 1);
 		} catch (SQLException e) {
 			System.out.println("error" + e);
 		} finally {

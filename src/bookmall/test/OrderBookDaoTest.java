@@ -14,15 +14,15 @@ import bookmall.vo.OrderBookVo;
 
 public class OrderBookDaoTest {
 
-	public static void main(String[] args) {
-		// insert test
-//		insertTest(1,1,1);
-//		insertTest(2,1,1);
-				
-		//getlist test
-		getListTest(1);
-
-	}
+//	public static void main(String[] args) {
+//		// insert test
+////		insertTest(1,1,1);
+////		insertTest(2,1,1);
+//				
+//		//getlist test
+//		getListTest(1);
+//
+//	}
 	
 	public static void getListTest(int orderNo) {
 		OrderBookDao dao = new OrderBookDao();

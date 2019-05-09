@@ -16,12 +16,12 @@ public class OrderDaoTest {
 	public static void main(String[] args) {
 		OrderBookDaoTest obdt = new OrderBookDaoTest();
 		// insert test
-		//int ordersNo = insertTest("엄기윤","djawlths4@naver.com",30000, "왕십리", 1);
-		int ordersNo = 1;
-//		if(ordersNo > -1) {
-//			obdt.insertTest(1, ordersNo, 1);
-//			obdt.insertTest(2, ordersNo, 1);
-//		}
+		int ordersNo = insertTest("엄기윤","djawlths4@naver.com",30000, "왕십리", 1);
+		// int ordersNo = 1;
+		if(ordersNo > -1) {
+			obdt.insertTest(1, ordersNo, 1);
+			obdt.insertTest(2, ordersNo, 1);
+		}
 		//getlist test
 		getListTest(1);
 		obdt.getListTest(ordersNo);
